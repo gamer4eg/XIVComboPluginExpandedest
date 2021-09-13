@@ -207,10 +207,10 @@ namespace XIVComboExpandedestPlugin
                 if (actionID == DRK.Souleater)
                 {
                     var gauge = GetJobGauge<DRKGauge>().Blood;
-                    var FeiLeiCD = GetCooldown(DRK.¸¥À×);
+                    var FeiLeiCD = GetCooldown(DRK.å¼—é›·);
                     var GCD = GetCooldown(DRK.HardSlash);
                     if (gauge >= 50 && !FeiLeiCD.IsCooldown &&GCD.CooldownRemaining>0.7 && level >= 70 && Configuration.IsEnabled(CustomComboPreset.DRKFoLeiFeature))
-                        return DRK.¸¥À×;
+                        return DRK.å¼—é›·;
                     if (gauge >= (uint)Configuration.gauge1 && Configuration.IsEnabled(CustomComboPreset.DRKOvercapFeature) && HasBuff(DRK.Buffs.BloodWeapon))
                         return DRK.Bloodspiller;
                     if (Configuration.IsEnabled(CustomComboPreset.DeliriumFeature))
@@ -253,9 +253,9 @@ namespace XIVComboExpandedestPlugin
                 {
                     var GCD = GetCooldown(DRK.HardSlash);
                     var gauge = GetJobGauge<DRKGauge>().Blood;
-                    var FeiLeiCD = GetCooldown(DRK.¸¥À×);
+                    var FeiLeiCD = GetCooldown(DRK.å¼—é›·);
                     if (gauge >= 50 && !FeiLeiCD.IsCooldown && level >= 80 && Configuration.IsEnabled(CustomComboPreset.DRKFoLeiFeature) && GCD.CooldownRemaining > 0.7)
-                        return DRK.¸¥À×;
+                        return DRK.å¼—é›·;
                     if (gauge >= 70 && Configuration.IsEnabled(CustomComboPreset.DRKOvercapFeature) && HasBuff(DRK.Buffs.BloodWeapon))
                         return DRK.Quietus;
                     if (Configuration.IsEnabled(CustomComboPreset.DeliriumFeature))
@@ -437,12 +437,12 @@ namespace XIVComboExpandedestPlugin
                 if (actionID == WAR.StormsPath)
                 {
                     var ZhongPiCD = GetCooldown(WAR.HeavySwing);
-                    var DongLuanCD = GetCooldown(WAR.¶¯ÂÒ);
-                    var YuanChuCD = GetCooldown(WAR.Ô­³õµÄ½â·Å);
+                    var DongLuanCD = GetCooldown(WAR.åŠ¨ä¹±);
+                    var YuanChuCD = GetCooldown(WAR.åŸåˆçš„è§£æ”¾);
                     var KuangBaoCD = GetCooldown(WAR.Berserk);
-                    if (Configuration.IsEnabled(CustomComboPreset.WarriorInnerReleaseFeature) && !DongLuanCD.IsCooldown &&HasBuff(WAR.Buffs.±©·çËé) &&ZhongPiCD.CooldownRemaining>0.7&& level >=64 && (YuanChuCD.CooldownRemaining>25|| KuangBaoCD.CooldownRemaining > 2))
+                    if (Configuration.IsEnabled(CustomComboPreset.WarriorInnerReleaseFeature) && !DongLuanCD.IsCooldown &&HasBuff(WAR.Buffs.æš´é£ç¢) &&ZhongPiCD.CooldownRemaining>0.7&& level >=64 && (YuanChuCD.CooldownRemaining>25|| KuangBaoCD.CooldownRemaining > 2))
                     {
-                        return WAR.¶¯ÂÒ;
+                        return WAR.åŠ¨ä¹±;
                     }
                     if (Configuration.IsEnabled(CustomComboPreset.WarriorDongLuanFeature) && HasBuff(WAR.Buffs.InnerRelease))
                     {
@@ -465,7 +465,7 @@ namespace XIVComboExpandedestPlugin
                             {
                                 return GetIconHook.Original(actionManager, WAR.FellCleave);
                             }
-                            if (BuffDuration(WAR.Buffs.±©·çËé)<15 && Configuration.IsEnabled(CustomComboPreset.WARBuffpFeature) && level >= 50)
+                            if (BuffDuration(WAR.Buffs.æš´é£ç¢)<15 && Configuration.IsEnabled(CustomComboPreset.WARBuffpFeature) && level >= 50)
                                 return WAR.StormsEye;
                             return WAR.StormsPath;
                         }
@@ -861,13 +861,13 @@ namespace XIVComboExpandedestPlugin
                 }
             }
 
-            //×Ô¶¯ÈÌÊõ
+            //è‡ªåŠ¨å¿æœ¯
             if (Configuration.IsEnabled(CustomComboPreset.NinjaRenShuFeature))
             {
                 var gauge = GetJobGauge<NINGauge>().HutonTimeLeft;
                 if (actionID == NIN.Tian && gauge >= 5)
                 {
-                    var BeiCiCD = GetCooldown(NIN.±³´Ì);
+                    var BeiCiCD = GetCooldown(NIN.èƒŒåˆº);
                     if (HasBuff(496) && !HasBuff(497) && BuffStacks(496)==1&& level > 45  )
                         return GetIconHook.Original(actionManager, NIN.Chi);
                     if (HasBuff(496) && !HasBuff(497) && ((BuffStacks(496) == 9 && (BeiCiCD.CooldownRemaining >= 17) || HasBuff(NIN.Buffs.Suiton)) || BuffStacks(496) == 57) && level > 45  )
@@ -932,7 +932,7 @@ namespace XIVComboExpandedestPlugin
                                     return GNB.EyeGouge;
                             }
                         }
-                        if (level >= 60 &&(WuQingCD.CooldownRemaining>20||(WuQingCD.CooldownRemaining <= 20 && HasBuff(GNB.Buffs.NoMercy))) )
+                        if (level >= 60 &&(WuQingCD.CooldownRemaining>18||(WuQingCD.CooldownRemaining <= 18 && HasBuff(GNB.Buffs.NoMercy))) )
                         {
 
                             if (ammoComboState == 0 && gauge.NumAmmo >= 1 &&!LeiYaCD.IsCooldown &&level>=60)
@@ -1043,19 +1043,19 @@ namespace XIVComboExpandedestPlugin
             {
                 if (actionID == MCH.CleanShot || actionID == MCH.HeatedCleanShot)
                 {
-                    var ZhengBeiCD = GetCooldown(MCH.Õû±¸);
+                    var ZhengBeiCD = GetCooldown(MCH.æ•´å¤‡);
                     var gauge = GetJobGauge<MCHGauge>();
-                    var ZuanTouCD = GetCooldown(MCH.×êÍ·);
-                    var KongQiMaoCD = GetCooldown(MCH.¿ÕÆøÃª);
+                    var ZuanTouCD = GetCooldown(MCH.é’»å¤´);
+                    var KongQiMaoCD = GetCooldown(MCH.ç©ºæ°”é”š);
                     var CD = ZuanTouCD.CooldownRemaining - ZhengBeiCD.CooldownRemaining;
                     if (Configuration.IsEnabled(CustomComboPreset.MachinistZiDongFeature))
                     {
                         if (gauge.IsOverheated())
                             return MCH.HeatBlast;
                         if (ZhengBeiCD.IsCooldown && ZuanTouCD.CooldownRemaining<=1 &&CD<0)
-                            return MCH.×êÍ·;
+                            return MCH.é’»å¤´;
                         if (ZhengBeiCD.IsCooldown && KongQiMaoCD.CooldownRemaining<=1)
-                            return MCH.¿ÕÆøÃª;
+                            return MCH.ç©ºæ°”é”š;
 
                     }
                         if (comboTime > 0)
@@ -1120,7 +1120,7 @@ namespace XIVComboExpandedestPlugin
                 }
             }
 
-            //»ú¹¤×Ô¶¯Á¬»÷.
+            //æœºå·¥è‡ªåŠ¨è¿å‡».
             if (Configuration.IsEnabled(CustomComboPreset.MachinistZiDongFeature))
             {
                 if (actionID == MCH.SplitShot || actionID== MCH.HeatedSplitShot)
@@ -1265,57 +1265,57 @@ namespace XIVComboExpandedestPlugin
 
             if (Configuration.IsEnabled(CustomComboPreset.ASTdotFeature) && !Configuration.IsEnabled(CustomComboPreset.AST111Feature))
             {
-                if (actionID == AST.Ğ×ĞÇ || actionID == AST.ÔÖĞÇ || actionID == AST.É·ĞÇ || actionID == AST.»öĞÇ)
+                if (actionID == AST.å‡¶æ˜Ÿ || actionID == AST.ç¾æ˜Ÿ || actionID == AST.ç…æ˜Ÿ || actionID == AST.ç¥¸æ˜Ÿ)
                 {
-                    if (((TargetBuffDuration(AST.Debuffs.·Ù×Æ) < 3 &&level>=72) || (TargetBuffDuration(AST.Debuffs.³ã×Æ) < 3 &&level>=46 &&level<72) || (TargetBuffDuration(AST.Debuffs.ÉÕ×Æ) < 3 &&level>3 &&level<46)) && Interface.ClientState.Condition[ConditionFlag.InCombat])
-                        return GetIconHook.Original(actionManager, AST.ÉÕ×Æ);
-                    return GetIconHook.Original(actionManager, AST.Ğ×ĞÇ);
+                    if (((TargetBuffDuration(AST.Debuffs.ç„šç¼) < 3 &&level>=72) || (TargetBuffDuration(AST.Debuffs.ç‚½ç¼) < 3 &&level>=46 &&level<72) || (TargetBuffDuration(AST.Debuffs.çƒ§ç¼) < 3 &&level>3 &&level<46)) && Interface.ClientState.Condition[ConditionFlag.InCombat])
+                        return GetIconHook.Original(actionManager, AST.çƒ§ç¼);
+                    return GetIconHook.Original(actionManager, AST.å‡¶æ˜Ÿ);
                 }
             }
 
             if (Configuration.IsEnabled(CustomComboPreset.AST111Feature) && !Configuration.IsEnabled(CustomComboPreset.ASTdotFeature))
             {
-                if (actionID == AST.ÉÕ×Æ || actionID == AST.³ã×Æ || actionID == AST.·Ù×Æ)
+                if (actionID == AST.çƒ§ç¼ || actionID == AST.ç‚½ç¼ || actionID == AST.ç„šç¼)
                 {
-                    if (((TargetBuffDuration(AST.Debuffs.·Ù×Æ) > 3 && level >= 72) || (TargetBuffDuration(AST.Debuffs.³ã×Æ) > 3 && level >= 46 && level < 72) || (TargetBuffDuration(AST.Debuffs.ÉÕ×Æ) > 3 && level > 3 && level < 46)) && Interface.ClientState.Condition[ConditionFlag.InCombat])
-                        return GetIconHook.Original(actionManager, AST.Ğ×ĞÇ);
-                    return GetIconHook.Original(actionManager, AST.ÉÕ×Æ);
+                    if (((TargetBuffDuration(AST.Debuffs.ç„šç¼) > 3 && level >= 72) || (TargetBuffDuration(AST.Debuffs.ç‚½ç¼) > 3 && level >= 46 && level < 72) || (TargetBuffDuration(AST.Debuffs.çƒ§ç¼) > 3 && level > 3 && level < 46)) && Interface.ClientState.Condition[ConditionFlag.InCombat])
+                        return GetIconHook.Original(actionManager, AST.å‡¶æ˜Ÿ);
+                    return GetIconHook.Original(actionManager, AST.çƒ§ç¼);
                 }
             }
 
             if (Configuration.IsEnabled(CustomComboPreset.ASTSectFeature))
             {
-                if (actionID == AST.°×ÖçÑ§ÅÉ)
+                if (actionID == AST.ç™½æ˜¼å­¦æ´¾)
                 {
                     if (Interface.ClientState.Condition[ConditionFlag.InCombat])
-                        return GetIconHook.Original(actionManager, AST.ÖĞ¼äÑ§ÅÉ);
-                    if (!Interface.ClientState.Condition[ConditionFlag.InCombat] &&HasBuff(AST.Buffs.°×ÖçÑ§ÅÉ))
-                        return AST.ºÚÒ¹Ñ§ÅÉ;
-                    return AST.°×ÖçÑ§ÅÉ;
+                        return GetIconHook.Original(actionManager, AST.ä¸­é—´å­¦æ´¾);
+                    if (!Interface.ClientState.Condition[ConditionFlag.InCombat] &&HasBuff(AST.Buffs.ç™½æ˜¼å­¦æ´¾))
+                        return AST.é»‘å¤œå­¦æ´¾;
+                    return AST.ç™½æ˜¼å­¦æ´¾;
                 }
-                if (actionID == AST.ºÚÒ¹Ñ§ÅÉ)
+                if (actionID == AST.é»‘å¤œå­¦æ´¾)
                 {
                     if (Interface.ClientState.Condition[ConditionFlag.InCombat])
-                        return GetIconHook.Original(actionManager, AST.ÖĞ¼äÑ§ÅÉ);
-                    if (!Interface.ClientState.Condition[ConditionFlag.InCombat] && HasBuff(AST.Buffs.°×ÖçÑ§ÅÉ))
-                        return AST.°×ÖçÑ§ÅÉ;
-                    return AST.ºÚÒ¹Ñ§ÅÉ;
+                        return GetIconHook.Original(actionManager, AST.ä¸­é—´å­¦æ´¾);
+                    if (!Interface.ClientState.Condition[ConditionFlag.InCombat] && HasBuff(AST.Buffs.ç™½æ˜¼å­¦æ´¾))
+                        return AST.ç™½æ˜¼å­¦æ´¾;
+                    return AST.é»‘å¤œå­¦æ´¾;
                 }
-                if (actionID == AST.Õ¼²·)
+                if (actionID == AST.å åœ)
                 {
                     if (!Interface.ClientState.Condition[ConditionFlag.InCombat])
-                        return GetIconHook.Original(actionManager, AST.ÖĞ¼äÑ§ÅÉ);
-                    return AST.Õ¼²·;
+                        return GetIconHook.Original(actionManager, AST.ä¸­é—´å­¦æ´¾);
+                    return AST.å åœ;
                 }
             }
 
             if (Configuration.IsEnabled(CustomComboPreset.ASTYangXingFeature))
             {
-                if (actionID == AST.ÑôĞÇÏàÎ»_°×)
+                if (actionID == AST.é˜³æ˜Ÿç›¸ä½_ç™½)
                 {
-                    if ((BuffDuration(AST.Buffs.ÑôĞÇÏàÎ»)>5||BuffDuration(AST.Buffs.ºÚÒ¹ÁìÓò) >5||lastMove==AST.ÑôĞÇÏàÎ»_°× || lastMove == AST.ÑôĞÇÏàÎ»_ºÚ)&& Interface.ClientState.Condition[ConditionFlag.InCombat])
-                        return GetIconHook.Original(actionManager, AST.ÑôĞÇ);
-                    return GetIconHook.Original(actionManager, AST.ÑôĞÇÏàÎ»_°×);
+                    if ((BuffDuration(AST.Buffs.é˜³æ˜Ÿç›¸ä½)>5||BuffDuration(AST.Buffs.é»‘å¤œé¢†åŸŸ) >5||lastMove==AST.é˜³æ˜Ÿç›¸ä½_ç™½ || lastMove == AST.é˜³æ˜Ÿç›¸ä½_é»‘)&& Interface.ClientState.Condition[ConditionFlag.InCombat])
+                        return GetIconHook.Original(actionManager, AST.é˜³æ˜Ÿ);
+                    return GetIconHook.Original(actionManager, AST.é˜³æ˜Ÿç›¸ä½_ç™½);
                 }
             }
 
@@ -1447,22 +1447,22 @@ namespace XIVComboExpandedestPlugin
 
             if (Configuration.IsEnabled(CustomComboPreset.SCHDotFeature))
             {
-                if (actionID == SCH.»ÙÃğ || actionID == SCH.ÆøÑ×·¨ || actionID == SCH.Ä§Ñ×·¨)
+                if (actionID == SCH.æ¯ç­ || actionID == SCH.æ°”ç‚æ³• || actionID == SCH.é­”ç‚æ³•)
                 {
-                    if (((TargetBuffDuration(SCH.Debuffs.¹Æ¶¾·¨) < 3 &&level>=72) || (TargetBuffDuration(SCH.Debuffs.¶¾¾ú) < 3 &&level>1 &&level<26 ) || (TargetBuffDuration(SCH.Debuffs.ÃÍ¶¾¾ú) < 3 &&level>=26 &&level<72)) && Interface.ClientState.Condition[ConditionFlag.InCombat])
-                        return GetIconHook.Original(actionManager, SCH.¶¾¾ú);
-                    return GetIconHook.Original(actionManager, SCH.»ÙÃğ);
+                    if (((TargetBuffDuration(SCH.Debuffs.è›Šæ¯’æ³•) < 3 &&level>=72) || (TargetBuffDuration(SCH.Debuffs.æ¯’èŒ) < 3 &&level>1 &&level<26 ) || (TargetBuffDuration(SCH.Debuffs.çŒ›æ¯’èŒ) < 3 &&level>=26 &&level<72)) && Interface.ClientState.Condition[ConditionFlag.InCombat])
+                        return GetIconHook.Original(actionManager, SCH.æ¯’èŒ);
+                    return GetIconHook.Original(actionManager, SCH.æ¯ç­);
                 }
             }
 
             if (Configuration.IsEnabled(CustomComboPreset.SCHYingJitFeature))
             {
-                if (actionID == SCH.Ó¦¼±Õ½Êõ)
+                if (actionID == SCH.åº”æ€¥æˆ˜æœ¯)
                 {
-                    var YingJiCD = GetCooldown(SCH.Ó¦¼±Õ½Êõ);
-                    if (BuffDuration(SCH.Buffs.Ó¦¼±Õ½Êõ)>5||lastMove==SCH.Ó¦¼±Õ½Êõ ||YingJiCD.IsCooldown)
-                        return SCH.Èº¶Ü;
-                    return SCH.Ó¦¼±Õ½Êõ;
+                    var YingJiCD = GetCooldown(SCH.åº”æ€¥æˆ˜æœ¯);
+                    if (BuffDuration(SCH.Buffs.åº”æ€¥æˆ˜æœ¯)>5||lastMove==SCH.åº”æ€¥æˆ˜æœ¯ ||YingJiCD.IsCooldown)
+                        return SCH.ç¾¤ç›¾;
+                    return SCH.åº”æ€¥æˆ˜æœ¯;
                 }
             }
 
@@ -1648,25 +1648,25 @@ namespace XIVComboExpandedestPlugin
                 }
             }
 
-            // dotÌæ»»111
+            // dotæ›¿æ¢111
             if (Configuration.IsEnabled(CustomComboPreset.WhiteStoneFeature))
             {
                 if (actionID == WHM.Stone || actionID == WHM.StoneTwo || actionID == WHM.StoneThree || actionID == WHM.StoneFour || actionID == WHM.Glare)
                 {
-                    if (((TargetBuffDuration(WHM.Debuffs.Glare)<3 &&level>71) ||(TargetBuffDuration(WHM.Debuffs.ÁÒ·ç)<3) &&level>45 && level <=71|| (TargetBuffDuration(WHM.Debuffs.¼²·ç)<3 &&level>3 &&level<46))&& Interface.ClientState.Condition[ConditionFlag.InCombat])
+                    if (((TargetBuffDuration(WHM.Debuffs.Glare)<3 &&level>71) ||(TargetBuffDuration(WHM.Debuffs.çƒˆé£)<3) &&level>45 && level <=71|| (TargetBuffDuration(WHM.Debuffs.ç–¾é£)<3 &&level>3 &&level<46))&& Interface.ClientState.Condition[ConditionFlag.InCombat])
                         return GetIconHook.Original(actionManager, WHM.Aero);
                     return GetIconHook.Original(actionManager,WHM.Stone);
                 }
             }
 
-            // Ò½¼ÃÌæ»»Ò½ÖÎ
+            // åŒ»æµæ›¿æ¢åŒ»æ²»
             if (Configuration.IsEnabled(CustomComboPreset.WhiteYiJiFeature))
             {
-                if (actionID == WHM.Ò½¼Ã)
+                if (actionID == WHM.åŒ»æµ)
                 {
                     if (BuffDuration(150)>=5 ||lastMove==133)
                         return WHM.Medica;
-                    return WHM.Ò½¼Ã;
+                    return WHM.åŒ»æµ;
                 }
             }
 
@@ -1789,34 +1789,34 @@ namespace XIVComboExpandedestPlugin
                     return MNK.Demolish;
                 }
             }
-            //Ê¹½ğ¸Õ¼«ÒâºÍÕæ±±CDÏàÍ¬
+            //ä½¿é‡‘åˆšææ„å’ŒçœŸåŒ—CDç›¸åŒ
             if (Configuration.IsEnabled(CustomComboPreset.MnkShenWeiFeature))
             {
-                if (actionID == MNK.½ğ¸Õ¼«Òâ)
+                if (actionID == MNK.é‡‘åˆšææ„)
                 {
-                    var JingGangCD = GetCooldown(MNK.½ğ¸Õ¼«Òâ);
-                    var ZhenBeiCD = GetCooldown(MNK.Õæ±±);
+                    var JingGangCD = GetCooldown(MNK.é‡‘åˆšææ„);
+                    var ZhenBeiCD = GetCooldown(MNK.çœŸåŒ—);
                     if (JingGangCD.CooldownRemaining > ZhenBeiCD.CooldownRemaining && level >= 64)
-                        return MNK.Õæ±±;
-                    return MNK.½ğ¸Õ¼«Òâ;
+                        return MNK.çœŸåŒ—;
+                    return MNK.é‡‘åˆšææ„;
                 }
             }
 
             if (Configuration.IsEnabled(CustomComboPreset.MnkZhenJiaoFeature))
             {
-                if (actionID == MNK.DragonKick||actionID== MNK.Bootshine||actionID== MNK.Ë«ÕÆ||actionID==MNK.ÕıÈ­||actionID== MNK.SnapPunch||actionID== MNK.Demolish)
+                if (actionID == MNK.DragonKick||actionID== MNK.Bootshine||actionID== MNK.åŒæŒ||actionID==MNK.æ­£æ‹³||actionID== MNK.SnapPunch||actionID== MNK.Demolish)
                 {
-                    if (HasBuff(MNK.Buffs.Õğ½Å) && TargetBuffDuration(MNK.Debuffs.Demolish) <= 3)
+                    if (HasBuff(MNK.Buffs.éœ‡è„š) && TargetBuffDuration(MNK.Debuffs.Demolish) <= 3)
                         return MNK.Demolish;
-                    if (HasBuff(MNK.Buffs.Õğ½Å) && BuffDuration(MNK.Buffs.TwinSnakes) > 3)
+                    if (HasBuff(MNK.Buffs.éœ‡è„š) && BuffDuration(MNK.Buffs.TwinSnakes) > 3)
                     {
                         if (HasBuff(MNK.Buffs.LeadenFist))
                             return MNK.Bootshine;
                         if (!HasBuff(MNK.Buffs.LeadenFist))
                             return MNK.DragonKick;
                     }
-                    if (HasBuff(MNK.Buffs.Õğ½Å) && BuffDuration(MNK.Buffs.TwinSnakes) <= 3)
-                        return MNK.Ë«ÕÆ;
+                    if (HasBuff(MNK.Buffs.éœ‡è„š) && BuffDuration(MNK.Buffs.TwinSnakes) <= 3)
+                        return MNK.åŒæŒ;
                 }
             }
 
